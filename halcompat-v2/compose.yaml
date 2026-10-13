@@ -1,0 +1,107 @@
+name: eqsthal-halcompat-v2
+
+x-portal-defaults: &portal-defaults
+  build:
+    context: ./portal
+  image: eqsthal-halcompat-portal:v2-20260730
+  restart: "no"
+  environment:
+    PUBLIC_HOST: "localhost"
+    PUBLIC_BASE_URL: "http://localhost:22080"
+    PRACTICE_OPENAI_BASE_URL: "http://host.docker.internal:11434/v1"
+    PRACTICE_RUN_TTL_SECONDS: "21600"
+    LEGACY_SUBMISSIONS_ENABLED: "false"
+    RATE_LIMIT_ATTEMPTS: "360"
+    DATA_DIR: "/data"
+    CHALLENGES_FILE: "/app/config/challenges.json"
+    ATTACHMENTS_ROOT: "/app/attachments"
+  volumes:
+    - eqsthal-halcompat-v2-data:/data
+    - type: bind
+      source: ../challenges.json
+      target: /app/config/challenges.json
+      read_only: true
+      bind:
+        create_host_path: false
+    - type: bind
+      source: ../attachments
+      target: /app/attachments
+      read_only: true
+      bind:
+        create_host_path: false
+  read_only: true
+  tmpfs:
+    - /tmp:size=16m,noexec,nosuid,nodev
+  cap_drop:
+    - ALL
+  security_opt:
+    - no-new-privileges:true
+  labels:
+    eqsthal.session: "halcompat-v2-20260730"
+
+services:
+  portal-v2:
+    <<: *portal-defaults
+    container_name: eqsthal-halcompat-v2-portal
+    ports:
+      - "0.0.0.0:22080:8080"
+    environment:
+      PUBLIC_HOST: "localhost"
+      PUBLIC_BASE_URL: "http://localhost:22080"
+      PRACTICE_OPENAI_BASE_URL: "http://host.docker.internal:11434/v1"
+      PRACTICE_RUN_TTL_SECONDS: "21600"
+      LEGACY_SUBMISSIONS_ENABLED: "false"
+      RATE_LIMIT_ATTEMPTS: "360"
+      DATA_DIR: "/data"
+      CHALLENGES_FILE: "/app/config/challenges.json"
+      ATTACHMENTS_ROOT: "/app/attachments"
+      ADMIN_IPS: "127.0.0.1"
+      MCP_ALLOWED_ORIGINS: "http://localhost:22080"
+    cpus: 0.35
+    mem_limit: 256m
+    pids_limit: 128
+    labels:
+      eqsthal.session: "halcompat-v2-20260730"
+      eqsthal.component: "public-portal-mcp"
+
+  admin-v2:
+    <<: *portal-defaults
+    container_name: eqsthal-halcompat-v2-admin
+    depends_on:
+      portal-v2:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:22079:8080"
+    environment:
+      PUBLIC_HOST: "localhost"
+      PUBLIC_BASE_URL: "http://localhost:22080"
+      PRACTICE_OPENAI_BASE_URL: "http://host.docker.internal:11434/v1"
+      PRACTICE_RUN_TTL_SECONDS: "21600"
+      LEGACY_SUBMISSIONS_ENABLED: "false"
+      RATE_LIMIT_ATTEMPTS: "360"
+      DATA_DIR: "/data"
+      CHALLENGES_FILE: "/app/config/challenges.json"
+      ATTACHMENTS_ROOT: "/app/attachments"
+      ADMIN_IPS: "172.21.0.1"
+      MCP_ALLOWED_ORIGINS: "http://localhost:22080"
+    cpus: 0.20
+    mem_limit: 192m
+    pids_limit: 128
+    labels:
+      eqsthal.session: "halcompat-v2-20260730"
+      eqsthal.component: "local-admin"
+
+volumes:
+  eqsthal-halcompat-v2-data:
+    name: eqsthal-halcompat-v2-data
+    labels:
+      eqsthal.session: "halcompat-v2-20260730"
+      eqsthal.component: "portal-data"
+
+networks:
+  default:
+    name: eqsthal-halcompat-v2-net
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
+          gateway: 172.21.0.1

@@ -1,0 +1,251 @@
+name: halctf-home
+
+x-challenge-defaults: &challenge-defaults
+  restart: "no"
+  cpus: 0.50
+  mem_limit: 512m
+  pids_limit: 256
+  network_mode: bridge
+  labels:
+    halctf.session: "home-20260729"
+    halctf.component: "challenge"
+
+services:
+  portal:
+    build:
+      context: ./portal
+    image: halctf-portal:home-20260729
+    container_name: halctf-home-portal
+    restart: "no"
+    ports:
+      - "0.0.0.0:21080:8080"
+    environment:
+      PUBLIC_HOST: "localhost"
+      ADMIN_IPS: "127.0.0.1"
+      RATE_LIMIT_ATTEMPTS: "360"
+      DATA_DIR: "/data"
+      CHALLENGES_FILE: "/app/config/challenges.json"
+      ATTACHMENTS_ROOT: "/app/attachments"
+    volumes:
+      - halctf-home-portal-data:/data
+      - ./challenges.json:/app/config/challenges.json:ro
+      - ./attachments:/app/attachments:ro
+    cpus: 0.50
+    mem_limit: 256m
+    pids_limit: 128
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid,nodev
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      halctf.session: "home-20260729"
+      halctf.component: "portal"
+
+  admin-portal:
+    build:
+      context: ./portal
+    image: halctf-portal:home-20260729
+    container_name: halctf-home-admin
+    restart: "no"
+    depends_on:
+      portal:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:21079:8080"
+    environment:
+      PUBLIC_HOST: "localhost"
+      ADMIN_IPS: "172.20.0.1"
+      RATE_LIMIT_ATTEMPTS: "360"
+      DATA_DIR: "/data"
+      CHALLENGES_FILE: "/app/config/challenges.json"
+      ATTACHMENTS_ROOT: "/app/attachments"
+    volumes:
+      - halctf-home-portal-data:/data
+      - ./challenges.json:/app/config/challenges.json:ro
+      - ./attachments:/app/attachments:ro
+    cpus: 0.25
+    mem_limit: 192m
+    pids_limit: 128
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid,nodev
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    labels:
+      halctf.session: "home-20260729"
+      halctf.component: "admin-portal"
+
+  orange:
+    <<: *challenge-defaults
+    build:
+      context: ./deployments/orange
+    image: eqsthal-orange:guard-20260730
+    container_name: halctf-home-orange
+    restart: "on-failure:5"
+    ports:
+      - "0.0.0.0:21081:9999"
+
+  algebra:
+    <<: *challenge-defaults
+    image: llmctf/2018q-misc-algebra:latest
+    container_name: halctf-home-algebra
+    ports:
+      - "0.0.0.0:21082:4324"
+
+  bigboi:
+    <<: *challenge-defaults
+    image: llmctf/2018q-pwn-bigboi:latest
+    container_name: halctf-home-bigboi
+    ports:
+      - "0.0.0.0:21083:1436"
+
+  baby-crypt:
+    <<: *challenge-defaults
+    image: llmctf/2017q-rev-baby_crypt:latest
+    container_name: halctf-home-baby-crypt
+    ports:
+      - "0.0.0.0:21084:8000"
+
+  grumpcheck:
+    <<: *challenge-defaults
+    image: llmctf/2017q-rev-grumpcheck:latest
+    container_name: halctf-home-grumpcheck
+    ports:
+      - "0.0.0.0:21085:7890"
+
+  historypeats:
+    <<: *challenge-defaults
+    image: llmctf/2013f-web-historypeats
+    container_name: halctf-home-historypeats
+    ports:
+      - "0.0.0.0:21086:80"
+
+  guess-harder:
+    <<: *challenge-defaults
+    image: llmctf/2013q-web-guessharder
+    container_name: halctf-home-guess-harder
+    ports:
+      - "0.0.0.0:21087:80"
+
+  webroot:
+    <<: *challenge-defaults
+    image: llmctf/2014f-web-webroot
+    container_name: halctf-home-webroot
+    ports:
+      - "0.0.0.0:21088:80"
+
+  silkgoat:
+    <<: *challenge-defaults
+    image: llmctf/2014q-web-silkgoat
+    container_name: halctf-home-silkgoat
+    ports:
+      - "0.0.0.0:21089:5000"
+
+  k-stairs:
+    <<: *challenge-defaults
+    image: llmctf/2015q-web-kstairs
+    container_name: halctf-home-k-stairs
+    ports:
+      - "0.0.0.0:21090:4567"
+
+  throwback:
+    <<: *challenge-defaults
+    image: llmctf/2015q-web-throwback
+    container_name: halctf-home-throwback
+    ports:
+      - "0.0.0.0:21091:4000"
+
+  cloudb:
+    <<: *challenge-defaults
+    image: llmctf/2016f-web-cloudb
+    container_name: halctf-home-cloudb
+    environment:
+      MYSQL_PASS: "'S0meR3@11yG00dPa$$w0rdThatY0u5hou1dntCar3@b0uT'"
+    ports:
+      - "0.0.0.0:21092:80"
+
+  seizure-cipher:
+    <<: *challenge-defaults
+    image: llmctf/2016f-web-seizurecipher
+    container_name: halctf-home-seizure-cipher
+    ports:
+      - "0.0.0.0:21093:9000"
+
+  i-got-id:
+    <<: *challenge-defaults
+    image: llmctf/2016q-web-igotid
+    container_name: halctf-home-i-got-id
+    ports:
+      - "0.0.0.0:21094:8000"
+
+  mfw:
+    <<: *challenge-defaults
+    image: llmctf/2016q-web-mfw
+    container_name: halctf-home-mfw
+    ports:
+      - "0.0.0.0:21095:8000"
+
+  littlequery:
+    <<: *challenge-defaults
+    image: llmctf/2017q-web-littlequery
+    container_name: halctf-home-littlequery
+    ports:
+      - "0.0.0.0:21096:80"
+
+  notmycupofcoffe:
+    <<: *challenge-defaults
+    image: llmctf/2017q-web-notmycupofcoffe
+    container_name: halctf-home-notmycupofcoffe
+    mem_limit: 256m
+    pids_limit: 128
+    ports:
+      - "0.0.0.0:21097:8080"
+
+  orangev2:
+    <<: *challenge-defaults
+    build:
+      context: ./deployments/orangev2
+    image: eqsthal-orangev2:guard-20260730
+    container_name: halctf-home-orangev2
+    restart: "on-failure:5"
+    mem_limit: 256m
+    pids_limit: 128
+    ports:
+      - "0.0.0.0:21098:9999"
+
+  picgram:
+    <<: *challenge-defaults
+    image: llmctf/2020f-web-picgram:latest
+    container_name: halctf-home-picgram
+    mem_limit: 256m
+    pids_limit: 128
+    ports:
+      - "0.0.0.0:21099:5000"
+
+  smug-dino:
+    <<: *challenge-defaults
+    image: llmctf/2023q-web-smug_dino
+    container_name: halctf-home-smug-dino
+    mem_limit: 256m
+    pids_limit: 128
+    ports:
+      - "0.0.0.0:21100:3009"
+
+volumes:
+  halctf-home-portal-data:
+    name: halctf-home-portal-data
+    labels:
+      halctf.session: "home-20260729"
+      halctf.component: "portal-data"
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1

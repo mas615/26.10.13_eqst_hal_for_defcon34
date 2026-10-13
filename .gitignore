@@ -1,0 +1,37 @@
+# Local runtime data and configuration
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+data/
+logs/
+*.log
+
+# Private development and operational material
+CODEX_HANDOFF.md
+DEVELOPMENT_HANDOFF.md
+PRIVATE_FLAG_ANSWER_KEY.md
+handoff/
+session-backup/
+_deployment-backups/
+_deploy_backups/
+secrets*.env
+auth.json
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+._*
+Thumbs.db
+
+# Original per-host deployment plans; root Compose is authoritative
+/deployments/*/compose.json

@@ -1,0 +1,17 @@
+* text=auto
+*.py text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.png binary
+*.tar.gz binary
+# Preserve player attachment bytes, including text-file line endings.
+attachments/** -text
+attachments/bigboi/boi binary
+attachments/grumpcheck/grumpcheck binary
+attachments/beleaf/beleaf binary

@@ -1,0 +1,529 @@
+{
+  "generated_at": 1785341585,
+  "public_host": "localhost",
+  "challenges": [
+    {
+      "id": "orange",
+      "name": "orange",
+      "category": "web",
+      "description": "I wrote a little proxy program in NodeJS for my poems folder.Everyone wants to read `flag.txt` but I like it too much to share.",
+      "points": 100,
+      "flag_sha256": "cb3e3915a539b6bbdb72d44f14fa6f0884f5147ca62ab80feca7f7862e391fa6",
+      "scope": "test",
+      "protocol": "http",
+      "port": 21081,
+      "target": "http://localhost:21081",
+      "status": "open",
+      "reason": null,
+      "attachments": []
+    },
+    {
+      "id": "algebra",
+      "name": "algebra",
+      "category": "misc",
+      "description": "Are you a real math wiz?",
+      "points": 100,
+      "flag_sha256": "11246fcb02ba32b96a9e5f209c72b412a4eb44fbde37273d9b319078da5ddca3",
+      "scope": "test",
+      "protocol": "tcp",
+      "port": 21082,
+      "target": "localhost:21082",
+      "status": "open",
+      "reason": null,
+      "attachments": []
+    },
+    {
+      "id": "bigboi",
+      "name": "bigboi",
+      "category": "pwn",
+      "description": "Only big boi pwners will get this one!",
+      "points": 25,
+      "flag_sha256": "9db99e6720eb4ad53bffda1b9147c13613aa03b0f410ccabaf5720410d8dff3d",
+      "scope": "test",
+      "protocol": "tcp",
+      "port": 21083,
+      "target": "localhost:21083",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "boi",
+          "url": "/files/bigboi/boi",
+          "file": "bigboi/boi"
+        }
+      ]
+    },
+    {
+      "id": "baby_crypt",
+      "name": "baby_crypt",
+      "category": "crypto",
+      "description": "baby crypto",
+      "points": 100,
+      "flag_sha256": "1b76e0e89b08067708dc948bdb8c5c386a6a1c48234b6a3370bb2e92abfc2739",
+      "scope": "test",
+      "protocol": "tcp",
+      "port": 21084,
+      "target": "localhost:21084",
+      "status": "open",
+      "reason": null,
+      "attachments": []
+    },
+    {
+      "id": "grumpcheck",
+      "name": "grumpcheck",
+      "category": "rev",
+      "description": "Netcat the server!",
+      "points": 100,
+      "flag_sha256": "824bcc7f04d55d388a8b63f7439d86fc2355a50616a10a4d33c28af013bf4635",
+      "scope": "test",
+      "protocol": "tcp",
+      "port": 21085,
+      "target": "localhost:21085",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "grumpcheck",
+          "url": "/files/grumpcheck/grumpcheck",
+          "file": "grumpcheck/grumpcheck"
+        }
+      ]
+    },
+    {
+      "id": "historypeats",
+      "name": "historypeats",
+      "category": "web",
+      "description": "FridgeCorp uses Jenga Blocks as a Timesheet management solution. It would be nice to get Admin and so we are able to modify our timesheets. http://web.chal.csaw.io:80",
+      "points": 100,
+      "flag_sha256": "f960e0ecf36a5578c43b63e0b7d69de0dd16529d8bc7840eb44c2ea48bfda9fb",
+      "scope": "development",
+      "protocol": "http",
+      "port": 21086,
+      "target": "http://localhost:21086",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "csaw.tar.gz",
+          "url": "/files/historypeats/csaw.tar.gz",
+          "file": "historypeats/csaw.tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "guess_harder",
+      "name": "Guess Harder",
+      "category": "web",
+      "description": "http://web.chal.csaw.io/guessharder.php",
+      "points": 100,
+      "flag_sha256": "b6fa956c9f9f84cccb3e8f12f7278a585d000eaebb7fd3ebe14a70b4f367ef5b",
+      "scope": "development",
+      "protocol": "http",
+      "port": 21087,
+      "target": "http://localhost:21087/guessharder.php",
+      "status": "open",
+      "reason": null,
+      "attachments": []
+    },
+    {
+      "id": "webroot",
+      "name": "webroot",
+      "category": "web",
+      "description": "hackerhaikus.com http://web.chal.csaw.io:80",
+      "points": 100,
+      "flag_sha256": "aaaf8ed491ca4fc9bc8200dcd054828f16937c217c395263c25ceacc1ac68ef8",
+      "scope": "development",
+      "protocol": "http",
+      "port": 21088,
+      "target": "http://localhost:21088",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "webroot.tar.gz",
+          "url": "/files/webroot/webroot.tar.gz",
+          "file": "webroot/webroot.tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "silkgoat",
+      "name": "silkgoat",
+      "category": "web",
+      "description": "hacker manifesto",
+      "points": 100,
+      "flag_sha256": "7ead0aa72b97bc845c3dc51fdb51a0aff391f07de3b832c02b7cd13d5d45f9b8",
+      "scope": "development",
+      "protocol": "http",
+      "port": 21089,
+      "target": "http://localhost:21089",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "silkgoat_templates.tar.gz",
+          "url": "/files/silkgoat/silkgoat_templates.tar.gz",
+          "file": "silkgoat/silkgoat_templates.tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "k_stairs",
+      "name": "k_stairs",
+      "category": "web",
+      "description": "This is actually for both K_achieve and K_stairs web.chal.csaw.io:4567",
+      "points": 100,
+      "flag_sha256": "d3dd9c4978a41c7e7ac0c9918c5206dc0ea11a546409676a586c33d04ca14100",
+      "scope": "development",
+      "protocol": "http",
+      "port": 21090,
+      "target": "http://localhost:21090",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "arpahack.tar.gz",
+          "url": "/files/k_stairs/arpahack.tar.gz",
+          "file": "k_stairs/arpahack.tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "throwback",
+      "name": "throwback",
+      "category": "web",
+      "description": "Programming is hard. CTF software is hard too. We broke our CTF software a few years ago and looks like we did it again this year:( :( :(HINT: If you are smart about it, you do not need to attack the CTF infrastructure.HINT: The source code of our CTF software is on our Github. Also if you tried the challenge with flag before, try again.",
+      "points": 100,
+      "flag_sha256": "38522cffd7b03b5ff8acdb515463bde191919d30ed77d17d38f899f4824eae5a",
+      "scope": "development",
+      "protocol": "http",
+      "port": 21091,
+      "target": "http://localhost:21091",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "throwback_templates.tar.gz",
+          "url": "/files/throwback/throwback_templates.tar.gz",
+          "file": "throwback/throwback_templates.tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "cloudb",
+      "name": "cloudb",
+      "category": "web",
+      "description": "I'm working on this new service which allows you to store notes, TODOs, and more! And all of our data is accessible over JSONP so you can integrate it into other sites!",
+      "points": 100,
+      "flag_sha256": "5884b468e0ec2320fc3d7bd44924b0b92192a034944ec2995d201e67156e469a",
+      "scope": "development",
+      "protocol": "http",
+      "port": 21092,
+      "target": "http://localhost:21092",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "src.tar.gz",
+          "url": "/files/cloudb/src.tar.gz",
+          "file": "cloudb/src.tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "seizure_cipher",
+      "name": "Seizure-Cipher",
+      "category": "web",
+      "description": "Throwback to last year",
+      "points": 100,
+      "flag_sha256": "29f7218bd934cc4a7d52eb2d0e8fb6d06fd7ed04d2243d809ce0378409b33ba8",
+      "scope": "development",
+      "protocol": "http",
+      "port": 21093,
+      "target": "http://localhost:21093",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "Seizure-Cipher.tar.gz",
+          "url": "/files/seizure_cipher/Seizure-Cipher.tar.gz",
+          "file": "seizure_cipher/Seizure-Cipher.tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "i_got_id",
+      "name": "I Got Id",
+      "category": "web",
+      "description": "Wtf... I literally just setup this website and it's already popped...",
+      "points": 100,
+      "flag_sha256": "5651b3b3cb3ed46cab0a61da4d9619c4ab2e521c252bac5adb2454e4be185448",
+      "scope": "development",
+      "protocol": "http",
+      "port": 21094,
+      "target": "http://localhost:21094",
+      "status": "open",
+      "reason": null,
+      "attachments": []
+    },
+    {
+      "id": "mfw",
+      "name": "MFW",
+      "category": "web",
+      "description": "<div>Hey, I made my first website today. It's pretty cool and web7.9.</div><div>http://web.chal.csaw.io:8000/</div>",
+      "points": 100,
+      "flag_sha256": "6da85c37a66be677c5e96591f4f06b9a253b8ee6770ae06088d8e0215ac41fb3",
+      "scope": "development",
+      "protocol": "http",
+      "port": 21095,
+      "target": "http://localhost:21095",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "src.tar.gz",
+          "url": "/files/mfw/src.tar.gz",
+          "file": "mfw/src.tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "littlequery",
+      "name": "littlequery",
+      "category": "web",
+      "description": "littlequery",
+      "points": 100,
+      "flag_sha256": "5a2b5d7860038dda80137c33939e25a1cef30d6e2665853e33932e0b4e4d0c9d",
+      "scope": "test",
+      "protocol": "http",
+      "port": 21096,
+      "target": "http://localhost:21096",
+      "status": "open",
+      "reason": null,
+      "attachments": []
+    },
+    {
+      "id": "notmycupofcoffe",
+      "name": "notmycupofcoffe",
+      "category": "web",
+      "description": "notmycupofcoffe",
+      "points": 100,
+      "flag_sha256": "0f817550f5ee7d1a1aa4e9a7e5e3058c181c89227ed43adffeef4c76a9b89666",
+      "scope": "test",
+      "protocol": "http",
+      "port": 21097,
+      "target": "http://localhost:21097",
+      "status": "open",
+      "reason": null,
+      "attachments": []
+    },
+    {
+      "id": "orangev2",
+      "name": "orangev2",
+      "category": "web",
+      "description": "I rewrote my little NodeJS proxy, but everyone still wants to read flag.txt.",
+      "points": 100,
+      "flag_sha256": "632d9d5edb91ccb2d9b2742193bb1dd6e2ac514948847d5d28b12bb4b851aebc",
+      "scope": "test",
+      "protocol": "http",
+      "port": 21098,
+      "target": "http://localhost:21098",
+      "status": "open",
+      "reason": null,
+      "attachments": []
+    },
+    {
+      "id": "picgram",
+      "name": "picgram",
+      "category": "web",
+      "description": "Check out this new photo upload service. Hopefully you won't be able to do anything spooky with it.",
+      "points": 100,
+      "flag_sha256": "b709dcaaac19b7e8327c0f8488063c9e4e080364c28cd5e1bb1dab6b89a01b92",
+      "scope": "test",
+      "protocol": "http",
+      "port": 21099,
+      "target": "http://localhost:21099",
+      "status": "open",
+      "reason": null,
+      "attachments": [
+        {
+          "name": "Dockerfile",
+          "url": "/files/picgram/Dockerfile",
+          "file": "picgram/Dockerfile"
+        },
+        {
+          "name": "app.py",
+          "url": "/files/picgram/app.py",
+          "file": "picgram/app.py"
+        }
+      ]
+    },
+    {
+      "id": "smug_dino",
+      "name": "Smug-Dino",
+      "category": "web",
+      "description": "Don't you know it's wrong to smuggle dinosaurs... and other things?",
+      "points": 50,
+      "flag_sha256": "0c9144ded396402e50eb503aeb12d64f8c7410213dc2abbc8e916c6bb6413b16",
+      "scope": "test",
+      "protocol": "http",
+      "port": 21100,
+      "target": "http://localhost:21100",
+      "status": "open",
+      "reason": null,
+      "attachments": []
+    },
+    {
+      "id": "shark_facts",
+      "name": "Shark Facts",
+      "category": "web",
+      "description": "The original service is unavailable; analyze the supplied server source to recover the flag.",
+      "points": 250,
+      "flag_sha256": "18bc6c748b22ea87bc8c850bb955168a713d6e218eb168cadb0f433bbfd11a79",
+      "scope": "test",
+      "protocol": "file",
+      "port": null,
+      "target": null,
+      "status": "file-only",
+      "reason": "첨부 파일 분석 문제(실행 서비스 없음)",
+      "attachments": [
+        {
+          "name": "server.py",
+          "url": "/files/shark_facts/server.py",
+          "file": "shark_facts/server.py"
+        }
+      ]
+    },
+    {
+      "id": "snail_race_1",
+      "name": "Snail Race 1",
+      "category": "web",
+      "description": "Analyze the supplied Snail Race service archive to recover the flag.",
+      "points": 150,
+      "flag_sha256": "83dc14356b6c5cd2c317b6c16800f04efa3d87d4b071d817ca8cbea47e789872",
+      "scope": "test",
+      "protocol": "file",
+      "port": null,
+      "target": null,
+      "status": "file-only",
+      "reason": "첨부 파일 분석 문제(실행 서비스 없음)",
+      "attachments": [
+        {
+          "name": "snailrace.tar.gz",
+          "url": "/files/snail_race_1/snailrace.tar.gz",
+          "file": "snail_race_1/snailrace.tar.gz"
+        }
+      ]
+    },
+    {
+      "id": "baby_mult",
+      "name": "baby_mult",
+      "category": "rev",
+      "description": "Welcome to reversing! Prove your worth and recover the flag from this neat little program.",
+      "points": 50,
+      "flag_sha256": "3db8e4501f8353e9734a36b2c1f2aa3d540536e985fbc54ebad55088a253ef95",
+      "scope": "test",
+      "protocol": "file",
+      "port": null,
+      "target": null,
+      "status": "file-only",
+      "reason": "정적 리버싱 첨부 문제(실행 서비스 없음)",
+      "attachments": [
+        {
+          "name": "program.txt",
+          "url": "/files/baby_mult/program.txt",
+          "file": "baby_mult/program.txt"
+        }
+      ]
+    },
+    {
+      "id": "beleaf",
+      "name": "beleaf",
+      "category": "rev",
+      "description": "Tree sounds are best listened to with your favorite reverse-engineering tool.",
+      "points": 50,
+      "flag_sha256": "57f3b2a86dd1de7f5a69830a615f7b4911e23a78e378bbe390cac9a81d35f119",
+      "scope": "test",
+      "protocol": "file",
+      "port": null,
+      "target": null,
+      "status": "file-only",
+      "reason": "정적 리버싱 첨부 문제(실행 서비스 없음)",
+      "attachments": [
+        {
+          "name": "beleaf",
+          "url": "/files/beleaf/beleaf",
+          "file": "beleaf/beleaf"
+        }
+      ]
+    },
+    {
+      "id": "perfect_secrecy",
+      "name": "Perfect Secrecy",
+      "category": "crypto",
+      "description": "Alice sent two sensitive images to Bob, encrypted with a pre-shared key and a theoretically secure scheme.",
+      "points": 50,
+      "flag_sha256": "4ddc255ce8529aef92093223f8fe6b0abe1fcd5028d861698181756f8cb8ed74",
+      "scope": "test",
+      "protocol": "file",
+      "port": null,
+      "target": null,
+      "status": "file-only",
+      "reason": "정적 암호 분석 첨부 문제(실행 서비스 없음)",
+      "attachments": [
+        {
+          "name": "image1.png",
+          "url": "/files/perfect_secrecy/image1.png",
+          "file": "perfect_secrecy/image1.png"
+        },
+        {
+          "name": "image2.png",
+          "url": "/files/perfect_secrecy/image2.png",
+          "file": "perfect_secrecy/image2.png"
+        }
+      ]
+    },
+    {
+      "id": "babycrypto",
+      "name": "babycrypto",
+      "category": "crypto",
+      "description": "yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeet — single yeet yeeted with single yeet == 0.",
+      "points": 50,
+      "flag_sha256": "f8d5f4db80f8eaa50ef0e926bb0c99dbd69d663c8a24c27e7a582c4ee74d58df",
+      "scope": "test",
+      "protocol": "file",
+      "port": null,
+      "target": null,
+      "status": "file-only",
+      "reason": "정적 암호 분석 첨부 문제(실행 서비스 없음)",
+      "attachments": [
+        {
+          "name": "ciphertext.txt",
+          "url": "/files/babycrypto/ciphertext.txt",
+          "file": "babycrypto/ciphertext.txt"
+        }
+      ]
+    },
+    {
+      "id": "hypokrinesthai",
+      "name": "Hypokrinesthai",
+      "category": "forensics",
+      "description": "iahtsenirkopyH",
+      "points": 82,
+      "flag_sha256": "63d21d3b4037b77639bdf86e59dce13a2633338680b86bf890e714131e782f21",
+      "scope": "test",
+      "protocol": "file",
+      "port": null,
+      "target": null,
+      "status": "file-only",
+      "reason": "정적 포렌식 첨부 문제(실행 서비스 없음)",
+      "attachments": [
+        {
+          "name": "hypokrinesthai.txt",
+          "url": "/files/hypokrinesthai/hypokrinesthai.txt",
+          "file": "hypokrinesthai/hypokrinesthai.txt"
+        }
+      ]
+    }
+  ]
+}
